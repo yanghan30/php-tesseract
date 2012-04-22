@@ -1,7 +1,13 @@
 #summary How to install php-tesseract
 
-1. copy tesseract.php into your program directory
+
+1. copy tesseract.php into your program directory<BR>
+{{{
+wget http://php-tesseract.googlecode.com/files/tesseract.php
+}}}
+For Precise
 2. copy tesseract.so inot `php-config --extension-dir`
 {{{
+wget http://php-tesseract.googlecode.com/files/tesseract.so
 cp tesseract.so `php-config --extension-dir`
 }}}
