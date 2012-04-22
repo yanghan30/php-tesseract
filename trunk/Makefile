@@ -29,5 +29,6 @@ clean:
 
 install:
 	 install -m 0644 tesseract.so `php-config --extension-dir`
+	 install -m 0644 tesseract.php `php-config --prefix`/share/php
 
 .PHONY: install test
