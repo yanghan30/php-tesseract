@@ -7,14 +7,14 @@ dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
 dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): -Wl,-Bsymbolic-functions -Wl,-z,relro
 dpkg-buildpackage: source package php-tesseract
 dpkg-buildpackage: source version 0.1-2
-dpkg-buildpackage: source changed by eli <eli@nowhere.com>
- dpkg-source --before-build php-tesseract_0.1
+dpkg-buildpackage: source changed by root <root@nowhere.com>
+ dpkg-source --before-build php-tesseract-0.1
 dpkg-buildpackage: host architecture amd64
  fakeroot debian/rules clean
 dh clean 
    dh_testdir
    dh_auto_clean
-make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
 rm -f *.o
 rm build -Rf
 rm -f *.cxx
@@ -23,13 +23,26 @@ rm -f *wrap*
 rm -f *.so
 rm deb_dist -Rf
 rm debian/source -Rf
-make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
    dh_clean
- dpkg-source -b php-tesseract_0.1
+ dpkg-source -b php-tesseract-0.1
 dpkg-source: warning: no source format specified in debian/source/format, see dpkg-source(1)
-dpkg-source: warning: source directory 'php-tesseract_0.1' is not <sourcepackage>-<upstreamversion> 'php-tesseract-0.1'
 dpkg-source: info: using source format `1.0'
-dpkg-source: info: building php-tesseract in php-tesseract_0.1-2.tar.gz
+dpkg-source: info: building php-tesseract using existing php-tesseract_0.1.orig.tar.gz
+dpkg-source: info: building php-tesseract in php-tesseract_0.1-2.diff.gz
+dpkg-source: warning: ignoring deletion of file tesseract.so
+dpkg-source: warning: ignoring deletion of file tesseract_wrap.cpp
+dpkg-source: warning: ignoring deletion of file main_dummy.o
+dpkg-source: warning: ignoring deletion of file setup.cfg
+dpkg-source: warning: ignoring deletion of file setup.py
+dpkg-source: warning: ignoring deletion of file setup.py.good
+dpkg-source: warning: ignoring deletion of file tesseract_wrap.o
+dpkg-source: warning: newly created empty file 'debian/docs' will not be represented in diff
+dpkg-source: warning: the diff modifies the following upstream files: 
+ config.log
+ config.status
+ python_tesseract.egg-info/PKG-INFO
+dpkg-source: info: use the '3.0 (quilt)' format to have separate and documented changes to upstream files, see dpkg-source(1)
 dpkg-source: info: building php-tesseract in php-tesseract_0.1-2.dsc
  debian/rules build
 dh build 
@@ -119,9 +132,10 @@ checking for strrchr... yes
 checking for strstr... yes
 configure: creating ./config.status
 config.status: creating config.h
+config.status: config.h is unchanged
 configure: WARNING: unrecognized options: --disable-maintainer-mode, --disable-dependency-tracking
    dh_auto_build
-make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
 gcc -c -fpic main_dummy.cpp -o main_dummy.o  -I. -I /usr/include/tesseract/ -I /usr/include/leptonica
 In file included from main_dummy.cpp:8:0:
 config.h:119:0: warning: "__linux__" redefined [enabled by default]
@@ -146,9 +160,9 @@ config.h:119:0: warning: "__linux__" redefined [enabled by default]
 config.h:133:0: warning: "restrict" redefined [enabled by default]
 /usr/include/php5/Zend/zend.h:181:0: note: this is the location of the previous definition
 gcc -shared main_dummy.o tesseract_wrap.o -o tesseract.so -lstdc++ -ltesseract -llept -lopencv_core
-make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
    dh_auto_test
-make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
 echo "testing 1"
 testing 1
 php tesseract.php
@@ -183,84 +197,78 @@ marrén répido salta sobre el perro
 perezoso. A raposa marrom rzipida
 salta sobre o cﬁo preguicoso.
 
-make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
  fakeroot debian/rules binary
-dh binary 
-   dh_testroot
-   dh_prep
-   dh_installdirs
-   dh_auto_install
-make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
+dh build 
+dh binary-arch --before dh_shlibdeps
+dh: The --before option is deprecated. Use override targets instead.
+   dh_testroot -a
+   dh_prep -a
+   dh_installdirs -a
+   dh_auto_install -a
+make[1]: Entering directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
 install -m 0644 tesseract.so `php-config --extension-dir`
 install -m 0644 tesseract.php `php-config --prefix`/share/php
-make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract_0.1'
-   dh_install
-   dh_installdocs
-   dh_installchangelogs
-   dh_installexamples
-   dh_installman
-   dh_installcatalogs
-   dh_installcron
-   dh_installdebconf
-   dh_installemacsen
-   dh_installifupdown
-   dh_installinfo
-   dh_pysupport
+make[1]: Leaving directory `/home/eli/svn8/php-tesseract/php-tesseract-0.1'
+   dh_install -a
+   dh_installdocs -a
+   dh_installchangelogs -a
+   dh_installexamples -a
+   dh_installman -a
+   dh_installcatalogs -a
+   dh_installcron -a
+   dh_installdebconf -a
+   dh_installemacsen -a
+   dh_installifupdown -a
+   dh_installinfo -a
+   dh_pysupport -a
 dh_pysupport: This program is deprecated, you should use dh_python2 instead. Migration guide: http://deb.li/dhs2p
-   dh_installinit
-   dh_installmenu
-   dh_installmime
-   dh_installmodules
-   dh_installlogcheck
-   dh_installlogrotate
-   dh_installpam
-   dh_installppp
-   dh_installudev
-   dh_installwm
-   dh_installxfonts
-   dh_installgsettings
-   dh_bugfiles
-   dh_ucf
-   dh_lintian
-   dh_gconf
-   dh_icons
-   dh_perl
-   dh_usrlocal
-   dh_link
-   dh_compress
-   dh_fixperms
-   dh_strip
-   dh_makeshlibs
-   dh_shlibdeps
+   dh_installinit -a
+   dh_installmenu -a
+   dh_installmime -a
+   dh_installmodules -a
+   dh_installlogcheck -a
+   dh_installlogrotate -a
+   dh_installpam -a
+   dh_installppp -a
+   dh_installudev -a
+   dh_installwm -a
+   dh_installxfonts -a
+   dh_installgsettings -a
+   dh_bugfiles -a
+   dh_ucf -a
+   dh_lintian -a
+   dh_gconf -a
+   dh_icons -a
+   dh_perl -a
+   dh_usrlocal -a
+   dh_link -a
+   dh_compress -a
+   dh_fixperms -a
+   dh_strip -a
+   dh_makeshlibs -a
+dh_shlibdeps -a --dpkg-shlibdeps-params="--ignore-missing-info"
+dh binary --after dh_shlibdeps
+dh: The --after option is deprecated. Use override targets instead.
    dh_installdeb
    dh_gencontrol
-dpkg-gencontrol: warning: Depends field of package php-tesseract: unknown substitution variable ${shlibs:Depends}
+dpkg-gencontrol: warning: Depends field of package python-tesseract: unknown substitution variable ${python:Depends}
+dpkg-gencontrol: warning: Depends field of package python-tesseract: unknown substitution variable ${shlibs:Depends}
+dpkg-gencontrol: warning: package python-tesseract: unknown substitution variable ${python:Provides}
+dpkg-gencontrol: warning: package python-tesseract: unknown substitution variable ${python:Versions}
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package `php-tesseract' in `../php-tesseract_0.1-2_amd64.deb'.
+dpkg-deb: building package `python-tesseract' in `../python-tesseract_0.1-2_amd64.deb'.
+dh binary-indep
+dh binary 
  dpkg-genchanges  >../php-tesseract_0.1-2_amd64.changes
-dpkg-genchanges: including full source code in upload
- dpkg-source --after-build php-tesseract_0.1
-dpkg-buildpackage: full upload; Debian-native package (full source is included)
+dpkg-genchanges: not including original source code in upload
+ dpkg-source --after-build php-tesseract-0.1
+dpkg-buildpackage: binary and diff upload (original source NOT included)
 Now running lintian...
 warning: the authors of lintian do not recommend running it with root privileges!
-W: php-tesseract source: native-package-with-dash-version
 W: php-tesseract source: configure-generated-file-in-source config.log
 W: php-tesseract source: configure-generated-file-in-source config.status
-W: php-tesseract source: diff-contains-svn-control-dir vs2008/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2008/include/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2008/port/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2008/lib/.svn
-W: php-tesseract source: diff-contains-svn-control-dir .svn
-W: php-tesseract source: diff-contains-svn-control-dir include/tesseract/.svn
-W: php-tesseract source: diff-contains-svn-control-dir include/.svn
-W: php-tesseract source: diff-contains-svn-control-dir include/leptonica/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2010/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2010/include/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2010/include/leptonica/.svn
-W: php-tesseract source: diff-contains-svn-control-dir vs2010/port/.svn
-W: php-tesseract source: diff-contains-svn-control-dir test3/.svn
-W: php-tesseract source: diff-contains-svn-control-dir lib/.svn
 W: php-tesseract source: dh-make-template-in-source debian/emacsen-install.ex
 W: php-tesseract source: dh-make-template-in-source debian/emacsen-remove.ex
 W: php-tesseract source: dh-make-template-in-source debian/emacsen-startup.ex
@@ -278,17 +286,13 @@ W: php-tesseract source: dh-make-template-in-source debian/preinst.ex
 W: php-tesseract source: dh-make-template-in-source debian/prerm.ex
 W: php-tesseract source: dh-make-template-in-source debian/shlibs.local.ex
 W: php-tesseract source: dh-make-template-in-source debian/watch.ex
-W: php-tesseract source: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
-W: php-tesseract source: bad-homepage <insert the upstream URL, if relevant>
 W: php-tesseract source: source-nmu-has-incorrect-version-number 0.1-2
-W: php-tesseract source: out-of-date-standards-version 3.9.2 (current is 3.9.3)
-W: php-tesseract: wrong-bug-number-in-closes l10:#nnnn
-E: php-tesseract: helper-templates-in-copyright
-W: php-tesseract: copyright-has-url-from-dh_make-boilerplate
-E: php-tesseract: copyright-contains-dh_make-todo-boilerplate
-W: php-tesseract: readme-debian-contains-debmake-template
-E: php-tesseract: description-starts-with-package-name
-W: php-tesseract: extended-description-line-too-long
-W: php-tesseract: superfluous-clutter-in-homepage <insert the upstream URL, if relevant>
-W: php-tesseract: bad-homepage <insert the upstream URL, if relevant>
+E: php-tesseract source: invalid-standards-version 0.1
+W: python-tesseract: latest-debian-changelog-entry-without-new-date
+E: python-tesseract: helper-templates-in-copyright
+W: python-tesseract: copyright-has-url-from-dh_make-boilerplate
+E: python-tesseract: copyright-contains-dh_make-todo-boilerplate
+W: python-tesseract: readme-debian-contains-debmake-template
+E: python-tesseract: extended-description-is-empty
+W: python-tesseract: wrong-section-according-to-package-name python-tesseract => python
 Finished running lintian.

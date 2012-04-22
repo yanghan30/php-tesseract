@@ -1,29 +1,29 @@
 Format: 1.8
-Date: Sun, 22 Apr 2012 18:44:03 +0800
+Date: Sun, 22 Apr 2012 19:26:33 +0800
 Source: php-tesseract
-Binary: php-tesseract
+Binary: python-tesseract
 Architecture: source amd64
 Version: 0.1-2
 Distribution: unstable
 Urgency: low
-Maintainer: eli <freetogo@gmail.com>
-Changed-By: eli <eli@nowhere.com>
+Maintainer: FreeToGo <FreeToGo@gmail.com>
+Changed-By: root <root@nowhere.com>
 Description: 
- php-tesseract - Php-tesseract is a wrapper class for Tesseract OCR
+ python-tesseract - ${python:Provides} Wrapper for Python-${python:Versions}
 Changes: 
  php-tesseract (0.1-2) unstable; urgency=low
  .
    * Non-maintainer upload.
    *
 Checksums-Sha1: 
- 50b6c06b7bc6ea920d9ea68eefb2133e0d9bc558 590 php-tesseract_0.1-2.dsc
- aa51d95552fdfff49b511d361ad4c0d3dc8159aa 31764838 php-tesseract_0.1-2.tar.gz
- 36a6439e969105a5bca2b4a1da3f72b1aa27ada5 2124 php-tesseract_0.1-2_amd64.deb
+ dc1dfa70472a9fa50a84988b0d8a8eef06ce6203 796 php-tesseract_0.1-2.dsc
+ caab1d06c2efe8c47e8e4cb81d5fc68dd2fb40f6 11270 php-tesseract_0.1-2.diff.gz
+ a7a654a1ce79aec6ba83b1cffcd2f15e0b70caa9 1974 python-tesseract_0.1-2_amd64.deb
 Checksums-Sha256: 
- b12a73853ce27103dffe49637ed84bf8afca7a52afdf9798f8387722436bc233 590 php-tesseract_0.1-2.dsc
- 3df14de283b7b0593e5723f828ac6851c2301696ca0fc4d866f1feb6cf96225f 31764838 php-tesseract_0.1-2.tar.gz
- ef8ef238ec7a7f51ceacb974ad7342e9377364e65dd85d3d6bf8a7b76fd3d8bb 2124 php-tesseract_0.1-2_amd64.deb
+ 2b7ec7bb9603dab06a28677f64a8b9440960b70c46c5fc506a1321e23fdeb755 796 php-tesseract_0.1-2.dsc
+ 3dfa426fddbd506b934457dc090565c094a4605fb653d0342d01802a7f35a5ec 11270 php-tesseract_0.1-2.diff.gz
+ ab3b44d498f6f124b9a7bdb0096e01879756548525acdea92a38c1a601732883 1974 python-tesseract_0.1-2_amd64.deb
 Files: 
- 3d63854e43f586bac28c2faa06f27d42 590 libs extra php-tesseract_0.1-2.dsc
- 8764126ae7c434a9648a86d4077e50b5 31764838 libs extra php-tesseract_0.1-2.tar.gz
- 5ebe8da7219c5c171fd038e40671ff0c 2124 libs extra php-tesseract_0.1-2_amd64.deb
+ edff3e55b13809b2230047eea9a2f9eb 796 php optional php-tesseract_0.1-2.dsc
+ da70643da8bb7039437698cf1173f21c 11270 php optional php-tesseract_0.1-2.diff.gz
+ 084686df1dbbde09e36990d162373af7 1974 php optional python-tesseract_0.1-2_amd64.deb
