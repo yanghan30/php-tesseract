@@ -26,9 +26,16 @@ clean:
 	rm -f tesseract*.py*
 	rm -f *wrap*
 	rm -f *.so
+	rm deb_dist -Rf
+	rm debian/source -Rf
 
 install:
 	 install -m 0644 tesseract.so `php-config --extension-dir`
 	 install -m 0644 tesseract.php `php-config --prefix`/share/php
+
+uninstall:
+	 rm `php-config --extension-dir`/tesseract.so
+	 rm `php-config --prefix`/share/php/tesseract.php
+
 
 .PHONY: install test
