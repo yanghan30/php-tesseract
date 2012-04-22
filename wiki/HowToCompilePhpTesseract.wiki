@@ -11,3 +11,10 @@ sudo make install
 make test
 
 }}}
+
+p.s. 
+_make sure the function dl is enabled_
+{{{
+cat /etc/php5/cli/php.ini |grep -i enable_dl
+enable_dl = On
+}}}
