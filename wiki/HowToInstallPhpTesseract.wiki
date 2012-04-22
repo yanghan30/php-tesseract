@@ -16,3 +16,10 @@ wget http://php-tesseract.googlecode.com/files/eurotext.jpg
 wget http://php-tesseract.googlecode.com/files/test.php
 php test.php
 }}}
+
+p.s. 
+_make sure the function dl is enabled_
+{{{
+cat /etc/php5/cli/php.ini |grep -i enable_dl
+enable_dl = On
+}}}
