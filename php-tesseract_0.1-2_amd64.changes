@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Sun, 22 Apr 2012 18:44:03 +0800
+Source: php-tesseract
+Binary: php-tesseract
+Architecture: source amd64
+Version: 0.1-2
+Distribution: unstable
+Urgency: low
+Maintainer: eli <freetogo@gmail.com>
+Changed-By: eli <eli@nowhere.com>
+Description: 
+ php-tesseract - Php-tesseract is a wrapper class for Tesseract OCR
+Changes: 
+ php-tesseract (0.1-2) unstable; urgency=low
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1: 
+ 50b6c06b7bc6ea920d9ea68eefb2133e0d9bc558 590 php-tesseract_0.1-2.dsc
+ aa51d95552fdfff49b511d361ad4c0d3dc8159aa 31764838 php-tesseract_0.1-2.tar.gz
+ 36a6439e969105a5bca2b4a1da3f72b1aa27ada5 2124 php-tesseract_0.1-2_amd64.deb
+Checksums-Sha256: 
+ b12a73853ce27103dffe49637ed84bf8afca7a52afdf9798f8387722436bc233 590 php-tesseract_0.1-2.dsc
+ 3df14de283b7b0593e5723f828ac6851c2301696ca0fc4d866f1feb6cf96225f 31764838 php-tesseract_0.1-2.tar.gz
+ ef8ef238ec7a7f51ceacb974ad7342e9377364e65dd85d3d6bf8a7b76fd3d8bb 2124 php-tesseract_0.1-2_amd64.deb
+Files: 
+ 3d63854e43f586bac28c2faa06f27d42 590 libs extra php-tesseract_0.1-2.dsc
+ 8764126ae7c434a9648a86d4077e50b5 31764838 libs extra php-tesseract_0.1-2.tar.gz
+ 5ebe8da7219c5c171fd038e40671ff0c 2124 libs extra php-tesseract_0.1-2_amd64.deb
