@@ -4,14 +4,14 @@ sudo apt-get install python-distutils-extra tesseract-ocr tesseract-ocr-eng libt
 
 ==For Precise or Quantal ==
 1. 
-
+{{{
 svn checkout http://php-tesseract.googlecode.com/svn/trunk/ php-tesseract
 cd php-tesseract
 ./configure --prefix=/usr
 make
 sudo make install
 make test
-
+}}}
 2. copy tesseract.php into your program directory<BR>
 {{{
 wget http://php-tesseract.googlecode.com/files/tesseract.php
