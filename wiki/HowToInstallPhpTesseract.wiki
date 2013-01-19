@@ -3,12 +3,14 @@
 sudo apt-get install python-distutils-extra tesseract-ocr tesseract-ocr-eng libtesseract-dev libleptonica-dev php5-dev swig libcv-dev build-essential subversion
 
 ==For Precise or Quantal ==
-1. copy tesseract.so inot `php-config --extension-dir`
-{{{
-wget http://php-tesseract.googlecode.com/files/tesseract.so
-cp tesseract.so `php-config --extension-dir`
-}}}
+1. 
 
+svn checkout http://php-tesseract.googlecode.com/svn/trunk/ php-tesseract
+cd php-tesseract
+./configure --prefix=/usr
+make
+sudo make install
+make test
 
 2. copy tesseract.php into your program directory<BR>
 {{{
