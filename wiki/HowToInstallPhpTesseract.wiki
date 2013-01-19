@@ -1,7 +1,8 @@
 #summary How to install php-tesseract
 =How to install php-tesseract=
+sudo apt-get install python-distutils-extra tesseract-ocr tesseract-ocr-eng libtesseract-dev libleptonica-dev php5-dev swig libcv-dev build-essential subversion
 
-==For Precise==
+==For Precise or Quantal ==
 1. copy tesseract.so inot `php-config --extension-dir`
 {{{
 wget http://php-tesseract.googlecode.com/files/tesseract.so
